@@ -17,6 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-roosterjs": [
+        "dist/ngx-roosterjs"
+      ],
+      "ngx-roosterjs/*": [
+        "dist/ngx-roosterjs/*"
+      ]
+    },
+    "jsx": "react"
   }
 }

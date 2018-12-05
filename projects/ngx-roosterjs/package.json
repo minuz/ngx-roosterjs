@@ -1,0 +1,23 @@
+{
+  "name": "ngx-roosterjs",
+  "author": {
+    "name": "Fernando Minoru Baba",
+    "email": "fernando.fminoru@gmail.com",
+    "url": "https://github.com/minuz/ngx-roosterjs"
+  },
+  "license": "MIT",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0",
+    "lodash": "^4.17.11",
+    "office-ui-fabric-react": "^6.109.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "roosterjs": "^6.18.0",
+    "roosterjs-react": "^0.0.58",
+    "roosterjs-react-ribbon": "^0.0.58",
+    "roosterjs-react-initializer": "0.0.0",
+    "rxjs": "~6.3.3"
+  }
+}
