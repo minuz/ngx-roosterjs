@@ -7,5 +7,8 @@
 </div>
 
 <div style="border: 1px #000 solid">
-  <ngx-roosterjs></ngx-roosterjs>
+  <ngx-roosterjs [content]="initialContent" #rooster></ngx-roosterjs>
+</div>
+<div>
+  <button (click)="save(rooster.content)">Save</button>
 </div>

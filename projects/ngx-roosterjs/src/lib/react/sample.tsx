@@ -56,5 +56,6 @@ export class SampleView {
 
     window.addEventListener('resize', () => ribbonPlugin.resize());
     ReactDom.render(view, container, null);
+    return viewState;
   }
 }

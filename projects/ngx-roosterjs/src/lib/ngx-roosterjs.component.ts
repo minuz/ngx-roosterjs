@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { SampleView } from './react/sample';
+import { EditorViewState } from 'roosterjs-react';
 
 @Component({
   selector: 'ngx-roosterjs',
@@ -9,13 +10,36 @@ import { SampleView } from './react/sample';
   styles: []
 })
 export class NgxRoosterjsComponent implements OnInit, OnDestroy {
-  @Input() initialContent: string;
+  private _viewState: EditorViewState;
+
+  @Input()
+  set content(value: string) {
+    if (this._viewState) {
+      this._viewState.content = value;
+      this._viewState.isDirty = true;
+    } else {
+      this._viewState = {
+        content: value,
+        isDirty: false
+      };
+    }
+  }
+
+  get content() {
+    if (!this._viewState) {
+      this._viewState.content = '';
+      this._viewState.isDirty = false;
+    }
+    return this._viewState.content;
+  }
 
   constructor() {}
 
   ngOnInit() {
-    SampleView.Init('roosterjs-container', '');
+    this._viewState = SampleView.Init('roosterjs-container', this.content);
   }
 
-  ngOnDestroy() {}
+  ngOnDestroy() {
+    this._viewState = null;
+  }
 }
